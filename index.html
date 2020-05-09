@@ -2,6 +2,18 @@
 <html>
 <head>
 	<title></title>
+  <style type="text/css">
+    .tarjeta{
+      background: red;
+      margin: 300px;
+    }
+
+    .tarjeta2{
+      background: blue;
+      margin-left: 300px;
+      margin-top: 500px;
+    }
+  </style>
 </head>
 <body>
 <div id="root"></div>
@@ -22,9 +34,16 @@
             <p>{props.phone}</p>
             <p>{props.headline}</p>  
           </div>
-    )
-  }
+              )
+        }
 
+    const BusicardBack = (props) => {
+          return (
+              <div className="tarjeta2">
+                
+              </div>
+        )
+      }
 
     /* Business Card component
      * @param name - the name of the person displayed in the business card
@@ -33,16 +52,26 @@
      * @param headline - a brief description that describes what the person does in 120 characters or less
      */
 
-  
+  Busicard.propTypes = {
+    name: PropTypes.string,
+    email: PropTypes.string,
+    phone: PropTypes.number,
+    name: PropTypes.string,
+  }
 
     const app = (
       <>
         <Busicard
              name= "Eric" 
              email= "01274997@itesm.mx" 
-              
+             phone= "5518407919" // si le quito las comillas me marca error y no se por que
              headline= "Soy muy dedicado">
         </Busicard>
+
+        <BusicardBack>
+            <div>hola</div>
+
+        </BusicardBack>
       </>
     );
 
